@@ -1,0 +1,38 @@
+{
+    "name": "harmonyio/phpunit-extension",
+    "description": "Asynchronous helpers for PHPUnit",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pieter Hordijk",
+            "email": "info@pieterhordijk.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2",
+        "amphp/amp": "^2.0"
+    },
+    "require-dev": {
+        "harmonyio/php-codesniffer-ruleset": "dev-master",
+        "phpstan/phpstan": "^0.10.5",
+        "phpunit/phpunit": "^7.4",
+        "slevomat/coding-standard": "^4.8",
+        "squizlabs/php_codesniffer": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "HarmonyIO\\PHPUnitExtension\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HarmonyIO\\PHPUnitExtensionTest\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
