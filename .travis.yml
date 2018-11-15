@@ -4,6 +4,10 @@ language: php
 
 matrix:
   include:
+    - name: '[REQUIRE_CHECK] PHP'
+      php: '7.2'
+      env: require=1
+
     - name: '[CS] PHP 7.2'
       php: '7.2'
       env: cs=1
@@ -66,8 +70,9 @@ before_script:
   - if [ "$dependencies" = "highest" ]; then travis_retry composer update --no-scripts -n; fi;
 
 script:
-  - if [ -z "$cs" ]; then phpdbg -qrr vendor/bin/phpunit --coverage-text --coverage-clover build/logs/clover.xml; fi;
+  - if [ -z "$cs" ] && [ -z "$require" ]; then phpdbg -qrr vendor/bin/phpunit --coverage-text --coverage-clover build/logs/clover.xml; fi;
   - if [ "$cs" = 1 ]; then vendor/bin/phpcs -s; fi;
+  - if [ "$require" = 1 ]; then vendor/bin/composer-require-checker check; fi;
 
 after_success:
-  - if [ -z "$cs" ]; then travis_retry php php-coveralls.phar; fi;
+  - if [ -z "$cs" ] && [ -z "$require" ]; then travis_retry php php-coveralls.phar; fi;
