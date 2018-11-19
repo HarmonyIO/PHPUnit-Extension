@@ -20,7 +20,7 @@
         "harmonyio/php-codesniffer-ruleset": "dev-master",
         "maglnet/composer-require-checker": "^1.1",
         "slevomat/coding-standard": "^4.8",
-        "squizlabs/php_codesniffer": "^3.3"
+        "squizlabs/php_codesniffer": "^3.3.1"
     },
     "autoload": {
         "psr-4": {
