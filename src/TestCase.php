@@ -12,7 +12,7 @@ class TestCase extends PHPUnitTestCase
      * Asserts that an array has a specified key.
      *
      * @param int|string                 $key
-     * @param mixed[]|\ArrayAccess|Promise $array
+     * @param array<mixed>|\ArrayAccess|Promise $array
      */
     public static function assertArrayHasKey($key, $array, string $message = ''): void
     {
@@ -23,7 +23,7 @@ class TestCase extends PHPUnitTestCase
      * Asserts that an array does not have a specified key.
      *
      * @param int|string                 $key
-     * @param mixed[]|\ArrayAccess|Promise $array
+     * @param array<mixed>|\ArrayAccess|Promise $array
      */
     public static function assertArrayNotHasKey($key, $array, string $message = ''): void
     {
@@ -31,7 +31,7 @@ class TestCase extends PHPUnitTestCase
     }
 
     /**
-     * @param \Countable|mixed[]|Promise $haystack
+     * @param \Countable|array<mixed>|Promise $haystack
      */
     public static function assertCount(int $expectedCount, $haystack, string $message = ''): void
     {
